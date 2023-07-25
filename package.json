@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "homepage": "https://musageniu345.github.io/newsletter-form",
   "scripts": {
     "build": "vite build",
     "preview": "vite preview"
