@@ -7,6 +7,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "devDependencies": {
+    "postcss": "^8.4.24", 
+    "postcss-preset-env": "^9.0.0",
+    "autoprefixer": "^10.4.14"
+  },
   "browserlist":[
     ">0.3%", "defaults", "supports es6-module", "maintained node versions"
     ],
