@@ -1,64 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/css/main.css"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="./src/css/main.css">
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
 
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="img">
-      <img srcset="
-    ./assets/images/illustration-sign-up-mobile.svg 375w, 
-    ./assets/images/illustration-sign-up-mobile.svg 376w" sizes="100%"
-        src="./assets/images/illustration-sign-up-mobile.svg" alt="sign up image">
-    </div>
-    <!-- Sign-up form start -->
-    <main class="form-box">
-      <h1>Stay Updated!</h1>
-
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul>
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
-      <div class="form-container">
-        <form>
-          <label for="email" class="email-label">Email address</label>
-          <input id="email" type="email" class="line-height" placeholder="email@company.com">
-        </form>
-        <button popovertarget="success" popovertargetaction="show" class="full-width line-height btn">Subscribe to
-          monthly newsletter</button>
+  <body>
+    <div class="wrapper">
+      <div class="img">
+        <img
+          srcset="
+            ./assets/images/illustration-sign-up-mobile.svg 375w,
+            ./assets/images/illustration-sign-up-mobile.svg 376w
+          "
+          sizes="100%"
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="sign up image"
+        />
       </div>
-    </main>
-  </div>
-  </div>
-  <!-- Sign-up form end -->
+      <!-- Sign-up form start -->
+      <main class="form-box">
+        <div>
+        <h1>Stay Updated!</h1>
 
-  <!-- Success message start -->
-  <!-- Success message end -->
-  <dialog class="modal" id="success" popover="manual">
-    <img width="58" src="./assets/images/icon-success.svg" alt="Done">
-    <h2 class="thanks" style="font-size: 2rem;">Thanks for subscribing!</h2>
-    <p>A confirmation email has been sent to ash@loremcompany.com.
-      Please open it and click the button inside to confirm your subscription.</p>
-    <button class="modal-button btn line-height" popovertarget="success" popovertargetaction="hide">Dismiss
-      message</button>
-  </dialog>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/musagenius345">Musa Badru</a>.
-  </div>
-  <script src="./src/ts/index.ts" type="module"></script>
-</body>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        </div>
+        <div class="form-container">
+          <form novalidate>
+            <label
+              for="email"
+              class="email-label"
+              ><span>Email address</span>
+              <span class="warning"></span></label
+            >
+            <input
+              id="email"
+              type="email"
+              class="line-height"
+              autocomplete
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              required
+              placeholder="email@company.com"
+            />
+            <button
+              popovertarget="success"
+              popovertargetaction="show"
+              class="full-width line-height btn popoverBtn"
+            >
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <!-- </div> -->
+    <!-- Sign-up form end -->
 
+    <!-- Success message start -->
+    <dialog
+      class="modal"
+      id="success"
+      popover="manual"
+    >
+      <div class="pop-container">
+      <img
+        width="58"
+        height="30"
+        class="tick"
+        src="./assets/images/icon-success.svg"
+        alt="Done"
+      />
+      <h2
+        class="thanks"
+        style="font-size: 2rem"
+      >
+        Thanks for subscribing!
+      </h2>
+      <p>
+        A confirmation email has been sent to ash@loremcompany.com. Please open
+        it and click the button inside to confirm your subscription.
+      </p>
+      <button
+        class="modal-button btn line-height"
+        popovertarget="success"
+        popovertargetaction="hide"
+      >
+        Dismiss message
+      </button>
+      </div>
+    </dialog>
+    <!-- Success message end -->
+    <div class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/musagenius345">Musa Badru</a>.
+    </div>
+    <script
+      async src="./src/ts/index.ts"
+      type="module"
+    ></script>
+    <script src="./src/ts/polyfill.ts"></script>
+  </body>
 </html>
