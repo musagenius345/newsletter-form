@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "vite": "^4.3.9",
     "postcss": "^8.4.24", 
     "postcss-preset-env": "^9.0.0",
     "autoprefixer": "^10.4.14"
