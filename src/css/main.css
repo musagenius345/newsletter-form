@@ -1,4 +1,5 @@
 @import url(./normalize.css);
+@import url(./popover.css);
 
 @font-face {
   font-family: 'Roboto';
@@ -48,7 +49,7 @@ h1 {
   max-width: 100%;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 501px) {
   .wrapper {
     border-radius: 1rem;
     flex-direction: row-reverse;
@@ -59,17 +60,32 @@ h1 {
     margin-block: 3rem;
 
   }
-  
-  .img{
+
+  ::backdrop {
+    --overlay: hsl(235, 18%, 26%);
+    background-color: var(--overlay);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  [popover] {
+    max-width: 100dvw;
+    width: 30rem;
+    border-radius: var(--bdr);
+
+  }
+
+  .img {
     min-height: 80vh;
     margin: 1em
   }
-  
-  .img img{
+
+  .img img {
     border-radius: var(--bdr);
   }
-  
-} 
+
+}
+
 .form-box {
   margin-inline: 2.2rem;
   text-align: left;
@@ -80,31 +96,35 @@ h1 {
   font-family: 'Roboto Bold';
 }
 
-.form-container {
+form {
+
   display: flex;
   flex-flow: column nowrap;
   justify-content: stretch;
   align-items: stretch;
+}
+
+.form-container {
   margin: 1em;
   margin-inline-start: .8rem;
   margin-block: 2rem;
 }
 
-.img{
+.img {
   min-height: 100%;
+  /* object-fit: cover; */
+}
+
+.img img {
   object-fit: cover;
 }
-  
-.img img{
-  object-fit: cover;
-}  
-  
+
 ul {
   list-style: none;
 }
 
 li {
-  padding-inline-start: .62em;
+  padding-inline-start: .82em;
 }
 
 li::marker {
@@ -127,10 +147,12 @@ li::marker {
   line-height: 2;
 }
 
-main, .img{
+main,
+.img {
   flex-basis: 50%;
 }
-#btn {
+
+.btn {
   border: none;
   margin: 0 auto;
   margin-block: 1.2rem;
@@ -141,26 +163,41 @@ main, .img{
   color: hsla(0, 0%, 100%, 1);
 }
 
-#btn:is(:hover, :focus) {
-  background-color: hsl(235, 18%, 26%);
-  /*   outline: 2px solid hsl(234, 29%, 10%);
-outline-offset: 2px; */
+.btn:is(:hover, :focus) {
+  outline: 2px solid hsl(234, 29%, 10%);
+  outline-offset: 2px;
 }
 
-dialog::backdrop {
-  background-color: var(--white);
-  width: 100vw;
-  height: 100vh;
+.btn:hover {
+  background-color: hsl(4, 100%, 67%);
+  filter: drop-shadow(hsl(4, 100%, 47%) 0px 0px 0.81rem);
+}
+
+@media (max-width: 500px) {
+
+  ::backdrop {
+    --overlay: white;
+    background-color: var(--overlay);
+  }
+
+  [popover] {
+    width: 100dvw;
+    height: 100dvh;
+    padding-inline-start: 2rem;
+
+  }
+
+  .thanks {
+    font-size: clamp(1.3rem, var(1.4rem + 0.6vw) 10rem);
+  }
+
+  [popover] .modal-button {
+    padding-inline: 1rem;
+  }
+
 }
 
 
-[popover]{
-  position: absolute;
-  width: 100vw;
-  top: 100%;
-  height: 100vh;
-
-}
 
 
 .attribution {
@@ -170,4 +207,10 @@ dialog::backdrop {
 
 .attribution a {
   color: hsl(228, 65%, 84%);
+}
+
+dialog img {
+  max-width: 5rem;
+  margin: 0;
+  padding: 0;
 }
