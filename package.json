@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
+  "browserlist":[
+    ">0.3%", "defaults", "supports es6-module", "maintained node versions"
+    ],
   "type": "module",
   "keywords": [],
   "author": "",
