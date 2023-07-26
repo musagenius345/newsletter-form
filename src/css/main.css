@@ -16,7 +16,7 @@
 }
 
 :root {
-  --bdr: 0.5rem;
+  --bdr: 0.75rem;
   --white: hsla(0, 0%, 100%, 1);
   --tomato: hsl(4, 100%, 47%);
   --tomato-dark: hsl(4, 100%, 37%);
@@ -26,16 +26,22 @@
 img {
   display: block;
   max-width: 100%;
+}
+
+img.signup-img {
   min-height: 100%;
 }
 
 body {
   background-color: hsl(235, 18%, 26%);
-  font-size: clamp(0.98rem, calc(1.023rem + 0.4vw), 1.265rem);
+  font-size: clamp(1rem, calc(1.24rem + 0.4vw), 1.34rem);
   /* text-wrap: balance; */
   position: relative;
   line-height: 1.6;
   max-width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
@@ -49,8 +55,12 @@ h1 {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
+  margin: 0;
   max-width: 100%;
 }
+
+
+
 
 ::backdrop {
   pointer-events: none;
@@ -58,15 +68,26 @@ h1 {
 }
 
 @media (min-width: 45.1rem) {
+  body{
+  padding-inline: 3rem;
+  min-height: 100vh;
+  }
   .wrapper {
     border-radius: 1rem;
     flex-direction: row-reverse;
     margin-inline: 2rem;
     /* gap: .4rem; */
     justify-content: center;
-    width: 91vw;
+    
+  max-width: clamp(43rem, 55rem, 70rem);
+    /* width: 91vw; */
     margin-block: 3rem;
+    margin-inline: 4rem;
 
+  }
+  
+  .modal {
+    max-width: 44rem;
   }
 
   ::backdrop {
@@ -82,8 +103,8 @@ h1 {
     width: 30rem;
     border-radius: 1.3rem;
   }
-  
-  .pop-container{
+
+  .pop-container {
     padding: .8rem;
   }
 
@@ -231,6 +252,14 @@ main,
 
 
 @media (max-width: 45rem) {
+  
+  img.signup-img{
+    max-width: 100%;
+  }
+  
+  body{
+    min-height: 100dvh;
+  }
 
   ::backdrop {
     --overlay: white;
